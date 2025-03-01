@@ -3,8 +3,7 @@ import os
 from PIL import Image
 import time
 
-image_folder = r"C:\Users\Eduardo Oliveira\OneDrive\Imagens\Capturas de tela"
-#image_folder = r"C:\Users\instalador\Pictures\TV"
+image_folder = r"CAMINHO_DAS_IMAGENS"
 
 def load_images(folder_path):
     images = []
@@ -36,14 +35,13 @@ else:
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: black; /* Adicionado para evitar bordas externas visíveis */
-        background-size: cover; /* Ajustado para cobrir a tela */
+        background-color: black;
+        background-size: cover;
         background-position: center;
     }
     </style>
     """
     st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-
     start_time = time.time()
 
     while True:
@@ -55,5 +53,5 @@ else:
 
             time.sleep(5)
 
-            if time.time() - start_time >= 3600:  # Atualiza a cada 1 hora (3600 segundos)
+            if time.time() - start_time >= 3600:
                 st.experimental_rerun()
